@@ -17,8 +17,8 @@ class Location(models.Model):
 class Photo(models.Model):
     image = models.ImageField(null=False, blank=False)
     description = models.CharField(max_length=180, null=False)
-    category = models.ForeignKey(Category,on_delete=models.SET_NULL)
-    location = models.ForeignKey(Location,on_delete=models.SET_NULL)
+    category = models.ForeignKey(Category,on_delete=models.SET_NULL, null=True)
+    location = models.ForeignKey(Location,on_delete=models.SET_NULL, null=True)
 
 
     def __str__(self):
