@@ -8,7 +8,7 @@
 
 {% block location%}
       {% for location in locations %}
-        <li><a class="dropdown-item" href="#">{{location.name}}</a></li>
+        <li><a class="dropdown-item" href="{% url 'home' %}?location={{location.name}}">{{location.name}}</a></li>
       {% endfor %}
 {% endblock location%}
 

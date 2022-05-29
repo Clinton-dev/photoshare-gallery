@@ -16,6 +16,11 @@ def home(request):
     else:
         photos = Photo.objects.filter(category__name=category)
 
+    location = request.GET.get('location')
+    if location == None:
+        photos = Photo.objects.all()
+    else:
+        photos = Photo.objects.filter(location__name=location)
 
     context = {
         'locations': get_location,
