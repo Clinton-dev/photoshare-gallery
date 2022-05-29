@@ -20,7 +20,8 @@ def home(request):
     return render(request,'gallery/home.html', context)
 
 def viewPhoto(request, pk):
-    return render(request,'gallery/photo.html')
+    photo = Photo.objects.get(id=pk)
+    return render(request,'gallery/photo.html', {'photo':photo})
 
 def createPhoto(request):
     return render(request,'gallery/create.html')
