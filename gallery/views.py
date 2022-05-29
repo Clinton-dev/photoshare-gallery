@@ -10,7 +10,13 @@ def get_location():
     return location
 
 def home(request):
-    photos = Photo.objects.all()
+    category = request.GET.get('category')
+    if category == None:
+        photos = Photo.objects.all()
+    else:
+        photos = Photo.objects.filter(category__name=category)
+
+
     context = {
         'locations': get_location,
         'categories': get_category,
@@ -37,14 +43,14 @@ def createPhoto(request):
         elif data['category_new'] != '':
             category, created = Category.objects.get_or_create(name=data['category_new'])
         else:
-            category = None
+            category = 'all'
 
         if data['location'] != 'none':
             location = Location.objects.get(id=data['location'])
         elif data['location_new'] != '':
             location, created = Location.objects.get_or_create(name=data['location_new'])
         else:
-            location = None
+            location = 'general'
 
         photo = Photo.objects.create(
             category = category,

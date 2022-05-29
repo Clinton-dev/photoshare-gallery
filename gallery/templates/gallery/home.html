@@ -2,7 +2,7 @@
 
 {% block category%}
       {% for category in categories %}
-        <li><a class="dropdown-item" href="#">{{category.name}}</a></li>
+        <li><a class="dropdown-item" href="{% url 'home' %}?category={{category.name}}">{{category.name}}</a></li>
       {% endfor %}
 {% endblock category%}
 
