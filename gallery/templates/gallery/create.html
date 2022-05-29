@@ -1,5 +1,49 @@
 {% extends "gallery/base.html" %}
 
 {% block content %}
-<h2>create page</h2>
+<div class="row justify-content-center">
+    <div class="col-md-11">
+        <a href="{% url 'home' %}" class="btn btn-dark my-2">Home page</a>
+        <div class="card p-2">
+            <form method='POST' action="" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group mb-2">
+                    <label for="description" class="form-label">Description</label>
+                    <input required name='description' class="form-control" type="text" id="description">
+                </div>
+                <div class="form-group mb-2">
+                    <label class="form-label">Select Category:</label>
+                    <select name='category' class="form-select" aria-label="Default select example">
+                        <option value='none'>Select category</option>
+                        {% for category in categories %}
+                        <option value='{{category.id}}' selected>{{category.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="category_new" class="form-label">create new category</label>
+                    <input name='category_new' class="form-control" type="text" id="category_new">
+                </div>
+                <div class="form-group mb-2">
+                    <label class="form-label">Select location:</label>
+                    <select name='location' class="form-select" aria-label="Default select example">
+                        <option value='none'>Select location</option>
+                        {% for location in locations %}
+                        <option value='{{location.id}}' selected>{{location.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group mb-2">
+                    <label for="location_new" class="form-label">create new location</label>
+                    <input name='location_new' class="form-control" type="text" id="location_new">
+                </div>
+                <div class="form-group">
+                    <label for="formFile" class="form-label">Upload Image</label>
+                    <input  required name='image' class="form-control" type="file" id="formFile">
+                </div>
+                <button type="submit" class="btn btn-primary my-2">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock content %}
