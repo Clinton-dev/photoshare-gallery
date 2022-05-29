@@ -11,9 +11,11 @@ def get_location():
     return location
 
 def home(request):
+    photos = Photo.objects.all()
     context = {
         'locations': get_location,
-        'categories': get_category
+        'categories': get_category,
+        'photos': photos
     }
     return render(request,'gallery/home.html', context)
 
