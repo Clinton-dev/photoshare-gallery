@@ -8,6 +8,10 @@ A personal gallery application that you can display your photos for others to se
 4. Copy a link to the photo to share with my friends.
 5. View photos based on the location they were taken.
 
+### Screenshot
+![](./screenshot.png)
+
+
 ## Getting Started
 
 - Clone this repository to your computer. `git clone https://github.com/Clinton-dev/photoshare-gallery.git`
