@@ -35,18 +35,20 @@ def search_category(request):
         photos = Photo.objects.filter(category__name=query)
 
     context = {
-        'photos': photos
+        'photos': photos,
+        'title':'search photos'
     }
     return render(request, 'gallery/search.html', context)
 
 def viewPhoto(request, pk):
     photo = Photo.objects.get(id=pk)
-    return render(request,'gallery/photo.html', {'photo':photo})
+    return render(request,'gallery/photo.html', {'photo':photo, 'title':'view photo'})
 
 def createPhoto(request):
     context = {
         'categories': get_category,
-        'locations': get_location
+        'locations': get_location,
+        'title':'add photo'
     }
 
     if request.method == 'POST':
