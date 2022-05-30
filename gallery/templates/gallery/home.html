@@ -1,11 +1,5 @@
 {% extends "gallery/base.html" %}
 
-{% block category%}
-      {% for category in categories %}
-        <li><a class="dropdown-item" href="{% url 'home' %}?category={{category.name}}">{{category.name}}</a></li>
-      {% endfor %}
-{% endblock category%}
-
 {% block location%}
       {% for location in locations %}
         <li><a class="dropdown-item" href="{% url 'home' %}?location={{location.name}}">{{location.name}}</a></li>

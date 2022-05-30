@@ -29,6 +29,16 @@ def home(request):
     }
     return render(request,'gallery/home.html', context)
 
+def search_category(request):
+    query = request.GET.get('query')
+    if query != None:
+        photos = Photo.objects.filter(category__name=query)
+
+    context = {
+        'photos': photos
+    }
+    return render(request, 'gallery/search.html', context)
+
 def viewPhoto(request, pk):
     photo = Photo.objects.get(id=pk)
     return render(request,'gallery/photo.html', {'photo':photo})
