@@ -21,11 +21,8 @@ A personal gallery application that you can display your photos for others to se
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Django requires Python and you can install python for your specific operating system by following this documentation [Python download](https://www.python.org/downloads/)
 
-```
-Give examples
-```
 
 ### Installing
 
@@ -67,12 +64,12 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Follow this resource if you want to deploy the app [deployment](https://github.com/bernie-haxx/Deployment_to_heroku_django)
 
 ## Built With
 
-* [Django](https://docs.djangoproject.com/en/4.0/) - Backend framework used
-* [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/) - frontend framework
+* [Django 4.0.4](https://docs.djangoproject.com/en/4.0/) - Backend framework used
+* [Bootstrap 5.2 ](https://getbootstrap.com/docs/5.2/getting-started/introduction/) - frontend framework
 
 ### Link to Live Site
 [Link to live site](https://galleryshare.herokuapp.com/)
