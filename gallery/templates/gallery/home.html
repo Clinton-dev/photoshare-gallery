@@ -17,6 +17,8 @@
               <p class="card-text">Category: {{photo.category.name}}</p>
             </div>
             <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm">view</a>
+            <button type="button" class="btn btn-info mt-1 copy-btn"
+                data-url="{% url 'photo' photo.id %}">copy image url</button>
         </div>
   </div>
   {% empty %}
