@@ -6,7 +6,8 @@
         <div style="height: 90vh;">
             <img style='max-width: 100%;max-height:100%;' src="{{photo.image.url}}" alt="photo image">
             <p>{{photo.description}}</p>
-            <a href="#" class="btn btn-info my-1">copy image url</a>
+            <button type="button" class="btn btn-outline-info my-1 copy-btn"
+                data-url="{% url 'photo' photo.id %}">copy image url</button>
         </div>
     </div>
 {% endblock content %}
